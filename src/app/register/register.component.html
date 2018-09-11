@@ -1,0 +1,28 @@
+<div id="registerForm">
+  <form [formGroup]="registerForm">
+    <h2>Register</h2>
+    <mat-form-field class="full-width">
+      <input matInput placeholder="email" type="email" formControlName="email">
+      <mat-error>
+        Please enter a valid email
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <input matInput placeholder="password" type="password" formControlName="password">
+      <mat-error>
+        Please enter a valid password
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="full-width">
+        <input matInput placeholder="comirm password" type="password" formControlName="password">
+        <mat-error>
+          Please enter a similar password
+        </mat-error>
+      </mat-form-field>
+
+    <div>
+      <button mat-button>sign up</button>
+    </div>
+  </form>
+</div>

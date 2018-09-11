@@ -1,10 +1,20 @@
-.example-form {
-    min-width: 150px;
-    max-width: 500px;
+.form {
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  .full-width {
     width: 100%;
-    margin: 3rem;
+    display: block;
   }
-  
-  .example-full-width {
-    width: 100%;
+  .login_actions{
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    margin-bottom: 2rem;
+    font-size: 0.8em;
+
+    a{
+      width: 155px;
+    }
   }
+}

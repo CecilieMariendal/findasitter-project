@@ -1,9 +1,30 @@
-<form class="example-form" novalidate>
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="email">
-  </mat-form-field>
+<form class="form" [formGroup]="loginForm" novalidate>
+  <mat-card>
+    <mat-card-title>
+      Log in
+    </mat-card-title>
+    <mat-card-content>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="email" type="email" formControlName="email">
+        <mat-error *ngIf="email.invalid && email.touched">
+          Please enter a valid email
+        </mat-error>
+      </mat-form-field>
 
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="pasword">
-  </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="password" type="password" formControlName="password">
+        <mat-hint  *ngIf="password.dirty" align="end">Must have one letter and one number</mat-hint>
+        <mat-error *ngIf="password.invalid && password.touched">
+          Please enter a valid password
+        </mat-error>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions class="login_actions">
+      <mat-checkbox class="full-width">Keep me log in</mat-checkbox>
+      <a >Forgot password?</a>
+    </mat-card-actions>
+    <mat-card-footer>
+      <button (click)="log()" mat-raised-button color="primary" class="full-width" >Log in</button>
+    </mat-card-footer>
+  </mat-card>
 </form>
