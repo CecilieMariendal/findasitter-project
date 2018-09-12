@@ -14,15 +14,32 @@
         flex-direction: column;
         margin: 0 auto;
     }
+    #preview{
+        width: 250px;
+        height: 250px;
+        margin: auto;
+        background-image: url('../../assets/img/profle-placeholder.jpg');
+        background-size: contain;
+        border-radius: 50%; 
+    }
     .form_group_step{
         display: flex;
         flex-direction: column;
         max-width: 500px;
         width: 100%;
         padding: 2rem;
+
+        .button_box{
+            margin-top: 1.5rem;
+        }
+
+        button{
+            margin-right: 1rem;
+        }
     }
     mat-radio-button{
         margin-bottom: 1rem;
         margin-right: 1rem;
     }
+
 }

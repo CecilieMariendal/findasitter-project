@@ -1,5 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, AbstractControl, FormBuilder, Validators } from '@angular/forms';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
+import {
+  FormGroup,
+  AbstractControl,
+  FormBuilder,
+  Validators
+} from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -8,15 +16,17 @@ import { FormGroup, AbstractControl, FormBuilder, Validators } from '@angular/fo
 })
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
     this.registerForm = this.fb.group({
       formArray: this.fb.array([
         this.fb.group({
-          type: ['',[
+          type: ['', [
             Validators.required
-          ]],
+          ]]
+        }),
+        this.fb.group({
           email: ['', [
             Validators.required,
             Validators.email
@@ -34,7 +44,6 @@ export class RegisterComponent implements OnInit {
           ]],
           gender: [''],
           age: ['', [
-            Validators.required,
             Validators.min(15)
           ]],
           phone: '',
@@ -51,12 +60,15 @@ export class RegisterComponent implements OnInit {
 
     // console.log()
   }
-  get formArray(): AbstractControl | null { 
-    return this.registerForm.get('formArray'); 
+  get formArray(): AbstractControl | null {
+    return this.registerForm.get('formArray');
   }
 
-  get type(){
+  get type() {
     return this.formArray.get([0]).get('type');
+  }
+  get name() {
+    return this.formArray.get([2]).get('name');
   }
   // get email(){
   //   return this.formArray.get([0]).get('email');
