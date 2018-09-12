@@ -18,7 +18,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonToggleModule, MatListModule,MatStepperModule, MatDialogModule, MatGridListModule, MatMenuModule, MatCheckboxModule} from '@angular/material';
+import { MatToolbarModule, MatButtonToggleModule, MatRadioModule,  MatListModule,MatStepperModule,MatSelectModule, MatDialogModule, MatGridListModule, MatMenuModule, MatCheckboxModule} from '@angular/material';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterComponent } from './register/register.component';
 
@@ -50,7 +50,9 @@ import { RegisterComponent } from './register/register.component';
     MatCheckboxModule,
     MatDialogModule,
     MatStepperModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatRadioModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

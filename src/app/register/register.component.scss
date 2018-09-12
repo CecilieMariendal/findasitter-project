@@ -1,9 +1,28 @@
 #registerForm{
-    margin: 5rem;
+    // margin: 5rem;
+    header{
+        // background-color: #fff;
+        padding: 1rem;
+
+        h2{
+            text-align: center;
+        }
+    }
     form {
-        width: 500px;
+        // width: 500px;
         display: flex;
         flex-direction: column;
         margin: 0 auto;
+    }
+    .form_group_step{
+        display: flex;
+        flex-direction: column;
+        max-width: 500px;
+        width: 100%;
+        padding: 2rem;
+    }
+    mat-radio-button{
+        margin-bottom: 1rem;
+        margin-right: 1rem;
     }
 }
