@@ -3,18 +3,18 @@
     <h2>Register</h2>
   </header>
   <form [formGroup]="registerForm">
-    <mat-vertical-stepper formArrayName="formArray" editable="true" #stepper>
+    <mat-vertical-stepper formArrayName="formArray" linear editable="true" #stepper>
       <mat-step formGroupName="0" [stepControl]="formArray?.get([0])">
         <ng-template matStepLabel>Who are you?</ng-template>
         <div class="form_group_step">
           <h3>Who are you?</h3>
-          <mat-radio-group formControlName="type">
+          <mat-radio-group formControlName="userType">
             <mat-radio-button value="parent">Im a parent</mat-radio-button>
             <mat-radio-button value="sitter">Im a sitter</mat-radio-button>
           </mat-radio-group>
 
           <div  class="button_box">
-            <button mat-raised-button color="primary" matStepperNext [disabled]="!type.touched" type="button">Next</button>
+            <button mat-raised-button color="primary" matStepperNext  type="button">Next</button>
           </div>
         </div>
       </mat-step>
@@ -24,7 +24,7 @@
           <h3>Account information</h3>
           <mat-form-field class="full-width">
             <input matInput placeholder="email" type="email" formControlName="email">
-            <mat-error>
+            <mat-error >
               Please enter a valid email
             </mat-error>
           </mat-form-field>
@@ -36,14 +36,14 @@
             </mat-error>
           </mat-form-field>
           <mat-form-field class="full-width">
-            <input matInput placeholder="confirm password" type="password">
+            <input matInput placeholder="confirm password" type="password" formControlName="passwordConfirm">
             <mat-error>
               Please enter a similar password
             </mat-error>
           </mat-form-field>
           <div  class="button_box">
             <button mat-stroked-button matStepperPrevious type="button">Back</button>
-            <button mat-raised-button color="primary" matStepperNext [disabled]="!type.touched" type="button">Next</button>
+            <button mat-raised-button color="primary" matStepperNext  type="button">Next</button>
           </div>
         </div>
       </mat-step>
@@ -58,13 +58,13 @@
               Your name must have at least two characters
             </mat-error>
           </mat-form-field>
-          <mat-form-field class="full-width" *ngIf="type.value === 'sitter'">
+          <mat-form-field class="full-width" *ngIf="userType.value === 'sitter'">
             <input matInput placeholder="age" type="number" formControlName="age">
             <mat-error>
               You must be at least 15 years old
             </mat-error>
           </mat-form-field>
-          <mat-form-field *ngIf="type.value === 'sitter'">
+          <mat-form-field *ngIf="userType.value === 'sitter'">
             <mat-select placeholder="gender">
               <mat-option [value]="female">Female</mat-option>
               <mat-option [value]="male">Male</mat-option>
@@ -80,7 +80,7 @@
         </div>
       </mat-step>
 
-      <mat-step formGroupName="3" [stepControl]="formArray.get([3])" *ngIf="type.value === 'sitter'" [optional]="isOptional">
+      <mat-step formGroupName="3" [stepControl]="formArray.get([3])" *ngIf="userType.value === 'sitter'" [optional]="isOptional">
         <ng-template matStepLabel>Preferences</ng-template>
         <div class="form_group_step">
           <h3>Tell a little about your work preferenes</h3>
@@ -109,7 +109,7 @@
         </div>
       </mat-step>
 
-      <mat-step formGroupName="4" [stepControl]="formArray.get([4])" *ngIf="type.value === 'sitter'" [optional]="isOptional">
+      <mat-step formGroupName="4" [stepControl]="formArray.get([4])" *ngIf="userType.value === 'sitter'" [optional]="isOptional">
         <ng-template matStepLabel>Final touch</ng-template>
 
         <div id="preview"></div>
@@ -142,4 +142,5 @@
       </mat-step>
     </mat-vertical-stepper>
   </form>
+  {{registerForm.value | json}}
 </div>

@@ -20,6 +20,9 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonToggleModule, MatRadioModule,MatDatepickerModule, MatListModule,MatStepperModule,MatSelectModule, MatDialogModule, MatGridListModule, MatMenuModule, MatCheckboxModule} from '@angular/material';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterComponent } from './register/register.component';
+import { ProfileComponent } from './profile/profile.component';
+import { AccountComponent } from './profile/account/account.component';
+import { ChildrenComponent } from './profile/children/children.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { RegisterComponent } from './register/register.component';
     LoginComponent,
     SidebarComponent,
     DashboardComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProfileComponent,
+    AccountComponent,
+    ChildrenComponent
   ],
   imports: [
     BrowserModule,

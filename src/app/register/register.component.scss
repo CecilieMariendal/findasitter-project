@@ -29,12 +29,16 @@
         width: 100%;
         padding: 2rem;
 
+        .mat_error{
+            color: red;
+        }
+
         .button_box{
             margin-top: 1.5rem;
         }
 
-        button{
-            margin-right: 1rem;
+        button + button{
+            margin-left: 1rem;
         }
     }
     mat-radio-button{
